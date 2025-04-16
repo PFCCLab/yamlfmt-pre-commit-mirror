@@ -1,7 +1,7 @@
 - id: yamlfmt
   name: yamlfmt
   description: "yamlfmt-pre-commit-mirror: check the formatting error in commit"
-  entry: google-yamlfmt
+  entry: yamlfmt
   stages: [commit, merge-commit, push, manual]
   language: python
   minimum_pre_commit_version: 2.9.2
