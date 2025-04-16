@@ -2,5 +2,5 @@
 name = "yamlfmt-mirror"
 version = "0.16.0"
 dependencies = [
-    "google-yamlfmt==0.16.0-post.0",
+    "google-yamlfmt==0.16.0-post.1",
 ]
