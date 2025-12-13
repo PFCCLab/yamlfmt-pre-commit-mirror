@@ -8,7 +8,7 @@ Add this to your `.pre-commit-config.yaml`:
 
 ```yaml
 - repo: https://github.com/PFCCLab/yamlfmt-pre-commit-mirror.git
-  rev: v0.19.0
+  rev: v0.20.0
   hooks:
     - id: yamlfmt
 ```
