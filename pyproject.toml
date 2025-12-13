@@ -1,6 +1,6 @@
 [project]
 name = "yamlfmt-mirror"
-version = "0.18.0"
+version = "0.18.1"
 dependencies = [
-    "google-yamlfmt==0.18.0",
+    "google-yamlfmt==0.18.1",
 ]
