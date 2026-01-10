@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 12 * * *"
+
 jobs:
   build:
     permissions:
@@ -14,22 +15,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Install uv
         uses: astral-sh/setup-uv@v7
+
       - name: Install python
         uses: actions/setup-python@v6
         with:
           python-version: "3.14"
+
       - name: Setup git
         run: |
           git config --global user.name 'Nyako Shigure'
           git config --global user.email 'shigure_nyako@outlook.com'
+
       - name: Run mirror
         run: |
           uv run --script mirror.py
+
       - name: Push changes
         run: |
-          git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
+          git remote set-url origin https://$GH_TOKEN@github.com/$GITHUB_REPOSITORY
           git push origin HEAD:refs/heads/main --tags
         env:
           GH_TOKEN: ${{ secrets.PRE_COMMIT_HOOK_AUTO_UPDATE_TOKEN }}
